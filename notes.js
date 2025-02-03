@@ -2,7 +2,7 @@
 function Notes(){
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [notes, setNotes] = useState("");
+    const [notes, setNotes] = useState([]);
 
     const addNote = () =>{
         if(title.trim() && description.trim()){
@@ -17,11 +17,11 @@ function Notes(){
         setNotes(updatedNotes);
     };
     return(
-        <div classNmae = "container">
+        <div className = "container">
             <h2> Notes App</h2>
-            <input type="text" placeholder="Title" value ="{title}" onChange={(e) => setTitle(e.target.value)}
+            <input type="text" placeholder="Title" value="{title}" onChange={(e) => setTitle(e.target.value)}
             />
-            <textarea placeholder="Description" value ="{description}" onChange={(e) => setDescription(e.target.value)}
+            <textarea placeholder="Description" value="{description}" onChange={(e) => setDescription(e.target.value)}
             ></textarea>
 
             <button onClick={addNote}>Add Note</button>
